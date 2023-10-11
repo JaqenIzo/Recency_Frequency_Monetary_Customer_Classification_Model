@@ -12,7 +12,7 @@ data = myData.copy(deep=True).drop_duplicates(subset=["CustomerID"],keep="last")
 
 #Calculate frequency of each CustomerID
 frequencySeries =myData.CustomerID.value_counts().reset_index(name="Frequency")
-# print(frequencySeries.loc[frequencySeries["CustomerID"]==8317])
+
 
 
 
@@ -86,7 +86,7 @@ for i in myLabels:
     for j in locationLabels:
         myCityStats[i]= [getType(i,j) for j in locationLabels]
         
-print(myCityStats)
+
 
 x=np.arange(len(locationLabels))
 width = 0.3
@@ -110,20 +110,3 @@ ax.set_ylim(0, 250)
 
 plt.show()
 
-
-
-
-
-
-
-    
-    
-    
-
-
-
-
-
- 
-
-# print(frequencySeries)
