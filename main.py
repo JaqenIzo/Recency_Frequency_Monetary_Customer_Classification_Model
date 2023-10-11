@@ -66,11 +66,13 @@ pro = typePro.mean(numeric_only=True)["Total Spent"]
 locations = data["Location"].drop_duplicates().values
 
 
-
+#Pie chart
 plt.pie([len(typeBeginners),len(typeInter),len(typePro)],labels=myLabels,autopct='%1.1f%%')
 plt.axis('equal')
 plt.legend(labels=myLabels)
 plt.show()
+
+
 locationLabels = ['Tokyo' ,'London', 'New York', 'Paris']
 def getType(myType,myCity) :
     return len(data.loc[(data["Rank"]==myType) & (data["Location"]==myCity)])
@@ -78,7 +80,7 @@ def getType(myType,myCity) :
 
     
 
-
+#Group bar Graphs
 myCityStats={}
 for i in myLabels:
     for j in locationLabels:
