@@ -60,22 +60,17 @@ intermediate = typeInter.mean(numeric_only=True)["Total Spent"]
 
 pro = typePro.mean(numeric_only=True)["Total Spent"]
 
-# print(len(data.loc[data["Rank"]=="Intermediate"]))
 
-
-# print(tokyoBeg)
 
 #Arry with locations
 locations = data["Location"].drop_duplicates().values
-#print(locations)
 
-#Tokyo = data.loc[data["Location"] == "Tokyo"]
 
-'''
+
 plt.pie([len(typeBeginners),len(typeInter),len(typePro)],labels=myLabels,autopct='%1.1f%%')
 plt.axis('equal')
 plt.legend(labels=myLabels)
-plt.show()'''
+plt.show()
 locationLabels = ['Tokyo' ,'London', 'New York', 'Paris']
 def getType(myType,myCity) :
     return len(data.loc[(data["Rank"]==myType) & (data["Location"]==myCity)])
@@ -83,11 +78,7 @@ def getType(myType,myCity) :
 
     
 
-# myCityStats = {
-#     "Beginners":[getType("Beginner",i) for i in locationLabels],
-#     "Intermediate":[getType("Intermediate",j) for j in locationLabels],
-#     "PRO": [getType("PRO",k)for k in locationLabels]
-# }
+
 myCityStats={}
 for i in myLabels:
     for j in locationLabels:
